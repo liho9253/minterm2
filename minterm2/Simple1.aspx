@@ -11,17 +11,17 @@
     <form id="form1" runat="server">
         <div>   
             <h2>會員註冊</h2>
-            <p style="font-size: x-large" aria-invalid="grammar">手機電話(帳號)
+            <p style="font-size: x-large">手機電話(帳號)
             <asp:TextBox ID="tb_CellPhone" runat="server" Width="200px" Height="15px"></asp:TextBox>
             </p>
             <p style="font-size: x-large; " >密碼
             <asp:TextBox ID="tb_Ps" runat="server" Width="200px" Height="15px" TextMode="Password"></asp:TextBox>
-            <asp:ImageButton ID="ImageButton1" runat="server" imageUrl="eye-slash-solid.svg" Height="30px" Width="30px" OnClick="ImageButton1_Click" />
+            <asp:ImageButton ID="ImageButton1" runat="server" ImageUrl="eye-slash-solid.svg" Height="30px" Width="30px" OnClick="ImageButton1_Click" />
 
             </p>
             <p style="font-size: x-large ">生理性別
                 <asp:RadioButtonList ID="rb_Gender" runat="server" RepeatDirection="Horizontal" RepeatLayout="Flow">
-                    <asp:ListItem>男</asp:ListItem>
+                    <asp:ListItem Selected="True">男</asp:ListItem>
                     <asp:ListItem>女</asp:ListItem>
                     <asp:ListItem>其他</asp:ListItem>
                 </asp:RadioButtonList>
@@ -35,9 +35,9 @@
             <p style="font-size: x-large">驗證碼
                 <asp:TextBox ID="tb_Num" runat="server" Width="50px" Height="15px"></asp:TextBox>
                 <asp:Image ID="ig_Num" runat="server" />
-                <asp:HiddenField ID="HiddenField1" runat="server" />
+                <asp:HiddenField ID="hd_Num" runat="server" />
             </p>
-            <asp:Button ID="btn_Submit" runat="server" Text="送出" Width="80px" Height="30px" PostBackUrl="Simple1Com.aspx" />   
+            <asp:Button ID="btn_Submit" runat="server" Text="送出" Width="80px" Height="30px" PostBackUrl="Simple1Com.aspx"/>   
         </div>
     </form>
 </body>

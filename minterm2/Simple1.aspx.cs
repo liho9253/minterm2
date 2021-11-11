@@ -8,9 +8,11 @@ using System.Web.UI.WebControls;
 namespace minterm2{
     public partial class Simple1 : System.Web.UI.Page{
         protected void Page_Load(object sender, EventArgs e) {
-            string s_Ver = mt_GenVeriStr();
-            mt_ImgPointer(ref ig_Num, s_Ver);
-            HiddenField1.Value = mt_2MD5(s_Ver);
+            if (!IsPostBack) {
+                string s_Ver = mt_GenVeriStr();
+                mt_ImgPointer(ref ig_Num, s_Ver);
+                hd_Num.Value = mt_2MD5(s_Ver);
+            }
         }
 
         // To generate a 4 digital number
@@ -68,10 +70,16 @@ namespace minterm2{
                 .ToUpper();
             return s_Md5;
         }
-
         protected void ImageButton1_Click(object sender, ImageClickEventArgs e){
-        //    if (tb_Ps.TextMode == Password)
-        //        ImageButton1.ImageUrl = "eye-solid.svg";
+            string temp = tb_Ps.Text;
+            if (ImageButton1.ImageUrl == "eye-slash-solid.svg") {
+                ImageButton1.ImageUrl = "eye-solid.svg";
+                tb_Ps.TextMode = TextBoxMode.SingleLine;
+            }else  if(ImageButton1.ImageUrl == "eye-solid.svg"){
+                ImageButton1.ImageUrl = "eye-slash-solid.svg";
+                tb_Ps.Attributes.Add("value", temp);
+                tb_Ps.TextMode = TextBoxMode.Password;
+            }
         }
     }
 }
