@@ -75,7 +75,7 @@ namespace minterm2{
             if (ImageButton1.ImageUrl == "eye-slash-solid.svg") {
                 ImageButton1.ImageUrl = "eye-solid.svg";
                 tb_Ps.TextMode = TextBoxMode.SingleLine;
-            }else  if(ImageButton1.ImageUrl == "eye-solid.svg"){
+            }else if(ImageButton1.ImageUrl == "eye-solid.svg"){
                 ImageButton1.ImageUrl = "eye-slash-solid.svg";
                 tb_Ps.Attributes.Add("value", temp);
                 tb_Ps.TextMode = TextBoxMode.Password;

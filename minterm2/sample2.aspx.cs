@@ -53,6 +53,34 @@ namespace minterm2 {
         protected void ddl_ZoneCode_SelectedIndexChanged(object sender, EventArgs e){
             ddl_City.Items.Clear();
             ListItem o_li;
+            switch (ddl_ZoneCode.SelectedValue){
+                case "02":
+                    for (int i = 0;i <= 1;i++) {
+                        o_li = new ListItem(sa_City2[0, i], sa_City2[0, i]);
+                        ddl_City.Items.Add(o_li);
+                    }
+                    break;
+                case "04":
+                    for (int i = 0;i <= 1;i++) {
+                        o_li = new ListItem(sa_City2[1, i], sa_City2[1, i]);
+                        ddl_City.Items.Add(o_li);
+                    }
+                    break;
+                case "07":
+                    for (int i = 0;i <= 1;i++) {
+                        o_li = new ListItem(sa_City2[2, i], sa_City2[2, i]);
+                        ddl_City.Items.Add(o_li);
+                    }
+                    break;
+                default:
+                    for (int i = 0; i <= 5; i++){
+                            o_li = new ListItem(sa_City1[i], sa_City1[i]);
+                            ddl_City.Items.Add(o_li);
+                        }
+                    break;
+
+            }    
+                /*
             if (ddl_ZoneCode.SelectedValue == "02") {
                 for (int i = 0;i <= 1;i++) {
                     o_li = new ListItem(sa_City2[0, i], sa_City2[0, i]);
@@ -73,7 +101,7 @@ namespace minterm2 {
                     o_li = new ListItem(sa_City1[i], sa_City1[i]);
                     ddl_City.Items.Add(o_li);
                 }
-            }
+            }*/
         }
         protected void rb_Des_SelectedIndexChanged(object sender, EventArgs e){
             if (rb_Des.SelectedValue == "是") {
